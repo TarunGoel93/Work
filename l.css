@@ -1,0 +1,925 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Dark Theme Colors */
+body {
+  background-color: #0a0f28;
+  color: white;
+}
+
+/* Sticky Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 40px;
+  background-color: #080c2e;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-links li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00aaff;
+}
+
+/* Register Button */
+.register-btn {
+  background-color: #00aaff;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+  background-color: #0088cc;
+  transform: scale(1.05);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+/* Sleek White Separator */
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  opacity: 0.3;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar:hover::after {
+  opacity: 0.5;
+}
+
+/* Workshop Section */
+.workshop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 8%;
+  background-color: #0a0f28;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+/* Left Side - Workshop Content */
+.workshop-content {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Main Heading */
+.workshop-content h1 {
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  animation: slideInLeft 1s ease-in-out;
+}
+
+/* Animated "2 Days Workshop: Think_, code_" */
+.workshop-content h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #00aaff;
+  animation: slideInLeft 1s ease-in-out 0.2s;
+}
+
+/* Animated Text */
+.animated-text {
+  font-size: 35px;
+  font-weight: bold;
+  color: #ffcc00;
+  display: inline-block;
+  min-width: 140px;
+}
+
+/* Animation for "Think_, code_" */
+@keyframes textFade {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.think-code-animation span {
+  animation: textFade 3s infinite;
+  display: inline-block;
+}
+
+.think-code-animation span:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+/* Description Text */
+.workshop-content p {
+  font-size: 20px;
+  color: white;
+  margin-top: 15px;
+  line-height: 1.6;
+  animation: slideInLeft 1s ease-in-out 0.4s;
+}
+
+/* Get Started Button - Dark Blue */
+.get-started-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #0056b3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  animation: slideInLeft 1s ease-in-out 0.6s;
+}
+
+.get-started-btn:hover {
+  background-color: #003d80;
+  transform: scale(1.05);
+}
+
+/* Right Side - Image Styling */
+.workshop-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in-out 0.5s;
+}
+
+.workshop-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease-in-out;
+}
+
+.workshop-image img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Schedule Section */
+.schedule {
+  padding: 80px 8%;
+  background-color: #0a0f28;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Schedule Title */
+.schedule h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-bottom: 10px;
+  position: relative;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.schedule h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4da6ff, #ff4dff, #ffdb4d);
+  animation: gradientMove 3s linear infinite;
+}
+
+/* Day Section */
+.day {
+  margin-top: 50px;
+  text-align: left;
+  animation: fadeIn 1s ease-in-out 0.5s;
+}
+
+/* Day Title */
+.day h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #4da6ff;
+  animation: slideInLeft 1s ease-in-out;
+}
+
+/* List of Events */
+.day ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Each Event Box */
+.day li {
+  font-size: 1.1rem;
+  padding: 15px;
+  border-left: 3px solid #4da6ff;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  animation: fadeInLeft 0.8s ease-in-out forwards;
+}
+
+/* Staggered Animation Delay */
+.day li:nth-child(1) { animation-delay: 0.2s; }
+.day li:nth-child(2) { animation-delay: 0.3s; }
+.day li:nth-child(3) { animation-delay: 0.4s; }
+.day li:nth-child(4) { animation-delay: 0.5s; }
+.day li:nth-child(5) { animation-delay: 0.6s; }
+
+/* Hover Effect */
+.day li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px) scale(1.03);
+  box-shadow: 0 5px 15px rgba(77, 166, 255, 0.2);
+}
+
+/* Team Section */
+.team {
+  text-align: center;
+  padding: 80px 8%;
+  background-color: #0a0f28;
+  color: white;
+}
+
+/* Meet Our Team - Animated Heading */
+.team h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  animation: colorChange 3s infinite linear alternate;
+  background: linear-gradient(90deg, #4da6ff, #ff4dff, #ffdb4d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Experts Subheading */
+.team h3 {
+  font-size: 2.2rem;
+  color: #4da6ff;
+  margin-bottom: 10px;
+  animation: fadeInDown 1.2s ease-in-out;
+  font-weight: bold;
+}
+
+/* Description */
+.team p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  animation: fadeInDown 1.4s ease-in-out;
+}
+
+/* Team Container */
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Team Member Box */
+.team-member {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  width: 48%;
+  max-width: 650px;
+  min-height: 200px;
+  transition: all 0.4s ease-in-out;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Hover Effect - Blue Glow */
+.team-member:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0px 0px 25px rgba(77, 166, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Profile Image */
+.team-member img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-right: 30px;
+  border: 3px solid #4da6ff;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Image Glow Effect */
+.team-member:hover img {
+  transform: rotate(5deg) scale(1.1);
+  border-color: #ffdb4d;
+  box-shadow: 0 0 20px rgba(255, 219, 77, 0.5);
+}
+
+/* Text Info */
+.team-info {
+  text-align: left;
+  flex: 1;
+}
+
+.team-info h4 {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+  transition: color 0.4s ease-in-out;
+}
+
+/* Name Glow Effect */
+.team-member:hover .team-info h4 {
+  color: #ffdb4d;
+  text-shadow: 0 0 10px rgba(255, 219, 77, 0.5);
+}
+
+/* Additional Text */
+.team-info p {
+  font-size: 1.2rem;
+  margin: 6px 0;
+}
+
+/* LinkedIn Link */
+.team-info a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #4da6ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.team-info a:hover {
+  color: #ffdb4d;
+  transform: translateX(5px);
+}
+
+/* Volunteers Section */
+.volunteers {
+  text-align: center;
+  padding: 80px 8%;
+  background-color: #0a0f28;
+  color: white;
+}
+
+/* Volunteers Heading */
+.volunteers h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  animation: fadeInDown 1s ease-in-out;
+  color: #ffdb4d;
+  transition: color 0.4s ease-in-out;
+}
+
+.volunteers h2:hover {
+  color: #4da6ff;
+}
+
+/* Subheading */
+.volunteers p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  animation: fadeInDown 1.2s ease-in-out;
+  color: #4da6ff;
+}
+
+/* Slider Wrapper */
+.slider-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Slider Track */
+.slider {
+  display: flex;
+  gap: 30px;
+  width: 400%;
+  animation: slide 20s linear infinite;
+}
+
+/* Volunteer Cards */
+.volunteer-card {
+  flex: 0 0 calc(25% - 30px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Hover Effect - Subtle Blue Glow */
+.volunteer-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0px 0px 25px rgba(77, 166, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Image Styling - 50% of Card Width */
+.volunteer-card img {
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid #4da6ff;
+  margin-bottom: 15px;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Image Hover - Glow Effect */
+.volunteer-card:hover img {
+  transform: scale(1.1) rotate(5deg);
+  border-color: #ffdb4d;
+  box-shadow: 0 0 20px rgba(255, 219, 77, 0.5);
+}
+
+/* Name */
+.volunteer-card h4 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.volunteer-card:hover h4 {
+  color: #ffdb4d;
+}
+
+/* LinkedIn Link */
+.volunteer-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffdb4d;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.3rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.volunteer-card a:hover {
+  color: #4da6ff;
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes colorChange {
+  0% {
+    background: linear-gradient(90deg, #4da6ff, #ff4dff, #ffdb4d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: linear-gradient(90deg, #ffdb4d, #ff4dff, #4da6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .workshop-content h1 {
+    font-size: 40px;
+  }
+  
+  .workshop-content h2,
+  .animated-text {
+    font-size: 30px;
+  }
+  
+  .team-member {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .navbar {
+    padding: 0 20px;
+  }
+  
+  .workshop {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .workshop-content,
+  .workshop-image {
+    max-width: 100%;
+  }
+  
+  .day li {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #080c2e;
+    padding: 20px 0;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .workshop-content h1 {
+    font-size: 32px;
+  }
+  
+  .workshop-content h2,
+  .animated-text {
+    font-size: 24px;
+  }
+  
+  .team-member {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .team-member img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .volunteer-card {
+    flex: 0 0 calc(50% - 30px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .workshop-content h1 {
+    font-size: 28px;
+  }
+  
+  .workshop-content h2,
+  .animated-text {
+    font-size: 20px;
+  }
+  
+  .get-started-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  
+  .schedule h2,
+  .team h2,
+  .volunteers h2 {
+    font-size: 2.5rem;
+  }
+  
+  .day h3 {
+    font-size: 1.5rem;
+  }
+  
+  .volunteer-card {
+    flex: 0 0 calc(100% - 30px);
+  }
+}
+
+/* FAQ Section with Enhanced Styling */
+.faq {
+  text-align: center;
+  padding: 120px 10%;
+  background-color: #0a0f28;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq h2 {
+  margin-bottom: 40px; /* Adjust spacing */
+  font-size: 40px; /* Adjust text size if needed */
+  color: #00aaff; /* Base text color */
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0 0 3px #00aaff, 0 0 6px rgba(0, 170, 255, 0.6);
+  animation: subtleGlow 1.5s infinite alternate;
+}
+
+/* Subtle Glowing Animation */
+@keyframes subtleGlow {
+  0% {
+    text-shadow: 0 0 3px #00aaff, 0 0 6px rgba(0, 170, 255, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 4px #00aaff, 0 0 8px rgba(0, 170, 255, 0.8);
+  }
+}
+
+
+/* Background Gradient Effect */
+.faq::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 170, 255, 0.1), transparent 70%);
+  animation: pulseGradient 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Enhanced FAQ Item */
+.faq-item {
+  margin-bottom: 25px; /* Increased spacing */
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.faq-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Improved Question Button */
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect */
+.faq-question::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.5s ease;
+}
+
+.faq-question:hover::before {
+  transform: translateX(100%);
+}
+
+.faq-question:hover {
+  color: #00aaff;
+}
+
+/* Enhanced Answer Section */
+.faq-answer {
+  display: none;
+  padding: 20px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  border-left: 5px solid #00aaff;
+  margin: 10px 20px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 0 10px 10px;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Plus Icon with Enhanced Animation */
+.plus {
+  font-size: 26px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  color: #00aaff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 170, 255, 0.15);
+}
+
+/* Active States */
+.active .faq-answer {
+  display: block;
+}
+
+.active .plus {
+  transform: rotate(45deg);
+  background: rgba(0, 170, 255, 0.3);
+}
+
+.active .faq-question {
+  color: #00aaff;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .faq {
+    padding: 80px 5%;
+  }
+
+  .faq-question {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .faq-answer {
+    font-size: 16px;
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .plus {
+    font-size: 22px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .faq-question,
+  .faq-answer,
+  .plus,
+  .faq-item {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
