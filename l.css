@@ -429,6 +429,8 @@ body {
   transform: translateX(5px);
 }
 
+/* This is just the modified Volunteers Section part of your CSS */
+
 /* Volunteers Section */
 .volunteers {
   text-align: center;
@@ -468,22 +470,79 @@ body {
   justify-content: center;
 }
 
-/* Slider Track */
-.slider {
-  display: flex;
-  gap: 30px;
-  width: 400%;
-  animation: slide 20s linear infinite;
+/* Slider Track - Desktop Version */
+@media screen and (min-width: 769px) {
+  .slider {
+    display: flex;
+    gap: 30px;
+    width: 400%;
+    animation: slide 20s linear infinite;
+  }
+
+  /* Volunteer Cards - Desktop */
+  .volunteer-card {
+    flex: 0 0 calc(25% - 30px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+  }
+
+  /* Animation for desktop continuous sliding */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
 
-/* Volunteer Cards */
-.volunteer-card {
-  flex: 0 0 calc(25% - 30px);
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 25px;
-  text-align: center;
-  transition: all 0.5s ease-in-out;
+/* Mobile Version - One Card at a Time */
+@media screen and (max-width: 768px) {
+  .slider {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+    animation: slideMobile 10s ease-in-out infinite;
+  }
+
+  /* Volunteer Cards - Mobile */
+  .volunteer-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    margin: 0 auto;
+  }
+
+  /* Animation for mobile - one card at a time */
+  @keyframes slideMobile {
+    0%,
+    20% {
+      transform: translateX(0);
+    }
+    25%,
+    45% {
+      transform: translateX(-100%);
+    }
+    50%,
+    70% {
+      transform: translateX(-200%);
+    }
+    75%,
+    95% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 }
 
 /* Hover Effect - Subtle Blue Glow */
@@ -540,189 +599,22 @@ body {
   transform: translateY(-3px);
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes colorChange {
-  0% {
-    background: linear-gradient(90deg, #4da6ff, #ff4dff, #ffdb4d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  100% {
-    background: linear-gradient(90deg, #ffdb4d, #ff4dff, #4da6ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Responsive Design */
-@media screen and (max-width: 1200px) {
-  .workshop-content h1 {
-    font-size: 40px;
-  }
-  
-  .workshop-content h2,
-  .animated-text {
-    font-size: 30px;
-  }
-  
-  .team-member {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .navbar {
-    padding: 0 20px;
-  }
-  
-  .workshop {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .workshop-content,
-  .workshop-image {
-    max-width: 100%;
-  }
-  
-  .day li {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: #080c2e;
-    padding: 20px 0;
-  }
-  
-  .nav-links.active {
-    display: flex;
-  }
-  
-  .hamburger {
-    display: block;
-  }
-  
-  .workshop-content h1 {
-    font-size: 32px;
-  }
-  
-  .workshop-content h2,
-  .animated-text {
-    font-size: 24px;
-  }
-  
-  .team-member {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .team-member img {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-  
-  .volunteer-card {
-    flex: 0 0 calc(50% - 30px);
-  }
-}
-
+/* Responsive adjustments for very small screens */
 @media screen and (max-width: 576px) {
-  .workshop-content h1 {
-    font-size: 28px;
-  }
-  
-  .workshop-content h2,
-  .animated-text {
-    font-size: 20px;
-  }
-  
-  .get-started-btn {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-  
-  .schedule h2,
-  .team h2,
-  .volunteers h2 {
-    font-size: 2.5rem;
-  }
-  
-  .day h3 {
+  .volunteer-card h4 {
     font-size: 1.5rem;
   }
-  
-  .volunteer-card {
-    flex: 0 0 calc(100% - 30px);
+
+  .volunteer-card a {
+    font-size: 1.1rem;
+  }
+
+  .volunteer-card img {
+    width: 60%;
   }
 }
+
+
 
 /* FAQ Section with Enhanced Styling */
 .faq {
@@ -921,5 +813,4 @@ body {
     animation: none !important;
   }
 }
-
 
