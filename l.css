@@ -1,3 +1,84 @@
+
+Community
+Library
+Projects
+New Project
+New Project
+View All
+Mobile slide animation...
+Css Page Refurbishment...
+Add animations to websit...
+View All
+New Feature
+Learn more
+v0 Premium and Team users can now add custom instructions that apply to all chats
+
+
+
+Mobile slide animation
+Private
+
+i file that i have upload is the l.css now you go to Volunteers Section here i can add the animation of moving slide i want that you change that moving slide becuase in the mobile view it show the half card due to moving so that add the animation that when the user open the side in phone then it shows the sliding cards one by one . At a time it shows the can coard at a time then move to second card. And you can change the animation of silding in a laptop view or you can do it rest as it.
+
+
+Thought for 5 seconds
+I'll help you modify the volunteers section slider to show one full card at a time on mobile devices. Let's update the CSS to fix the half-card issue in mobile view.
+
+I've made the following changes to fix the volunteer slider:
+
+Created separate mobile and desktop versions:
+
+For desktop (screens wider than 768px), I kept the original continuous sliding animation
+For mobile (screens 768px and smaller), I implemented a new animation that shows one full card at a time
+Mobile-specific changes:
+
+Each volunteer card now takes up 100% of the container width on mobile
+Added a new slideMobile animation that pauses on each card for a few seconds before moving to the next one
+The animation cycles through all cards with smooth transitions between them
+Additional responsive improvements:
+
+Added extra adjustments for very small screens (under 576px) to ensure text and images remain properly sized
+Made sure the cards are centered in the container
+This solution ensures that on mobile devices, users will see one complete volunteer card at a time with a smooth transition between cards, solving the half-card issue you were experiencing.
+
+You have 2 free messages remaining today.
+Upgrade Plan
+
+Chat Input
+Ask a follow up…
+No file chosen
+v0 may make mistakes. Please use with discretion.
+
+styles.css
+/* Responsive adjustments for very small screens */
+@media screen and (max-width: 576px) {
+  .volunteer-card h4 {
+    font-size: 1.5rem;
+  }
+
+  .volunteer-card a {
+    font-size: 1.1rem;
+  }
+
+
+160161162163164165166167168169170171172173174175176177178179180181182183184185186
+Console
+styles.css
+/* This is just the modified Volunteers Section part of your CSS */
+
+/* Volunteers Section */
+.volunteers {
+  text-align: center;
+  padding: 80px 8%;
+  background-color: #0a0f28;
+  color: white;
+}
+
+
+12345678910111213141516171819202122232425262728293031323334
+Private Chat – v0 by Vercel
+snippet.txtsnippet.txt
+snippet.txt
 /* Reset Styles */
 * {
   margin: 0;
@@ -5,13 +86,11 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
 /* Dark Theme Colors */
 body {
   background-color: #0a0f28;
   color: white;
 }
-
 /* Sticky Navbar */
 .navbar {
   display: flex;
@@ -28,47 +107,39 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease-in-out;
 }
-
 /* Logo */
 .logo {
   font-size: 24px;
   font-weight: bold;
   transition: transform 0.3s ease-in-out;
 }
-
 .logo:hover {
   transform: scale(1.05);
 }
-
 /* Navigation Links */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
 }
-
 .nav-links li {
   padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
-
 .nav-links li:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
 }
-
 .nav-links a {
   text-decoration: none;
   color: white;
   font-size: 18px;
   transition: color 0.3s;
 }
-
 .nav-links a:hover {
   color: #00aaff;
 }
-
 /* Register Button */
 .register-btn {
   background-color: #00aaff;
@@ -77,12 +148,10 @@ body {
   font-weight: bold;
   transition: all 0.3s ease-in-out;
 }
-
 .register-btn:hover {
   background-color: #0088cc;
   transform: scale(1.05);
 }
-
 /* Hamburger Menu */
 .hamburger {
   display: none;
@@ -90,11 +159,9 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }
-
 .hamburger:hover {
   transform: scale(1.1);
 }
-
 /* Sleek White Separator */
 .navbar::after {
   content: "";
@@ -107,11 +174,9 @@ body {
   opacity: 0.3;
   transition: opacity 0.3s ease-in-out;
 }
-
 .navbar:hover::after {
   opacity: 0.5;
 }
-
 /* Workshop Section */
 .workshop {
   display: flex;
@@ -123,7 +188,6 @@ body {
   flex-wrap: wrap;
   gap: 50px;
 }
-
 /* Left Side - Workshop Content */
 .workshop-content {
   flex: 1;
@@ -131,7 +195,6 @@ body {
   text-align: left;
   animation: fadeIn 1.5s ease-in-out;
 }
-
 /* Main Heading */
 .workshop-content h1 {
   font-size: 45px;
@@ -140,7 +203,6 @@ body {
   margin-bottom: 20px;
   animation: slideInLeft 1s ease-in-out;
 }
-
 /* Animated "2 Days Workshop: Think_, code_" */
 .workshop-content h2 {
   font-size: 35px;
@@ -148,7 +210,6 @@ body {
   color: #00aaff;
   animation: slideInLeft 1s ease-in-out 0.2s;
 }
-
 /* Animated Text */
 .animated-text {
   font-size: 35px;
@@ -157,22 +218,18 @@ body {
   display: inline-block;
   min-width: 140px;
 }
-
 /* Animation for "Think_, code_" */
 @keyframes textFade {
   0%, 100% { opacity: 0; }
   50% { opacity: 1; }
 }
-
 .think-code-animation span {
   animation: textFade 3s infinite;
   display: inline-block;
 }
-
 .think-code-animation span:nth-child(2) {
   animation-delay: 1.5s;
 }
-
 /* Description Text */
 .workshop-content p {
   font-size: 20px;
@@ -181,7 +238,6 @@ body {
   line-height: 1.6;
   animation: slideInLeft 1s ease-in-out 0.4s;
 }
-
 /* Get Started Button - Dark Blue */
 .get-started-btn {
   display: inline-block;
@@ -198,12 +254,10 @@ body {
   text-decoration: none;
   animation: slideInLeft 1s ease-in-out 0.6s;
 }
-
 .get-started-btn:hover {
   background-color: #003d80;
   transform: scale(1.05);
 }
-
 /* Right Side - Image Styling */
 .workshop-image {
   flex: 1;
@@ -212,7 +266,6 @@ body {
   align-items: center;
   animation: fadeIn 1.5s ease-in-out 0.5s;
 }
-
 .workshop-image img {
   max-width: 100%;
   height: auto;
@@ -220,12 +273,10 @@ body {
   box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
   transition: all 0.4s ease-in-out;
 }
-
 .workshop-image img:hover {
   transform: scale(1.05) rotate(2deg);
   box-shadow: 0px 15px 30px rgba(255, 255, 255, 0.3);
 }
-
 /* Schedule Section */
 .schedule {
   padding: 80px 8%;
@@ -236,7 +287,6 @@ body {
   z-index: 5;
   animation: fadeIn 1.2s ease-in-out;
 }
-
 /* Schedule Title */
 .schedule h2 {
   font-size: 2.5rem;
@@ -247,7 +297,6 @@ body {
   position: relative;
   animation: fadeInDown 1s ease-in-out;
 }
-
 .schedule h2::after {
   content: '';
   position: absolute;
@@ -258,14 +307,12 @@ body {
   background: linear-gradient(90deg, #4da6ff, #ff4dff, #ffdb4d);
   animation: gradientMove 3s linear infinite;
 }
-
 /* Day Section */
 .day {
   margin-top: 50px;
   text-align: left;
   animation: fadeIn 1s ease-in-out 0.5s;
 }
-
 /* Day Title */
 .day h3 {
   font-size: 1.8rem;
@@ -273,13 +320,11 @@ body {
   color: #4da6ff;
   animation: slideInLeft 1s ease-in-out;
 }
-
 /* List of Events */
 .day ul {
   list-style: none;
   padding: 0;
 }
-
 /* Each Event Box */
 .day li {
   font-size: 1.1rem;
@@ -291,21 +336,18 @@ body {
   transition: all 0.3s ease-in-out;
   animation: fadeInLeft 0.8s ease-in-out forwards;
 }
-
 /* Staggered Animation Delay */
 .day li:nth-child(1) { animation-delay: 0.2s; }
 .day li:nth-child(2) { animation-delay: 0.3s; }
 .day li:nth-child(3) { animation-delay: 0.4s; }
 .day li:nth-child(4) { animation-delay: 0.5s; }
 .day li:nth-child(5) { animation-delay: 0.6s; }
-
 /* Hover Effect */
 .day li:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateX(10px) scale(1.03);
   box-shadow: 0 5px 15px rgba(77, 166, 255, 0.2);
 }
-
 /* Team Section */
 .team {
   text-align: center;
@@ -313,7 +355,6 @@ body {
   background-color: #0a0f28;
   color: white;
 }
-
 /* Meet Our Team - Animated Heading */
 .team h2 {
   font-size: 3rem;
@@ -325,7 +366,6 @@ body {
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
-
 /* Experts Subheading */
 .team h3 {
   font-size: 2.2rem;
@@ -334,14 +374,12 @@ body {
   animation: fadeInDown 1.2s ease-in-out;
   font-weight: bold;
 }
-
 /* Description */
 .team p {
   font-size: 1.3rem;
   margin-bottom: 40px;
   animation: fadeInDown 1.4s ease-in-out;
 }
-
 /* Team Container */
 .team-container {
   display: flex;
@@ -349,7 +387,6 @@ body {
   gap: 40px;
   flex-wrap: wrap;
 }
-
 /* Team Member Box */
 .team-member {
   display: flex;
@@ -363,14 +400,12 @@ body {
   transition: all 0.4s ease-in-out;
   animation: fadeInUp 1.5s ease-in-out;
 }
-
 /* Hover Effect - Blue Glow */
 .team-member:hover {
   transform: translateY(-10px) scale(1.03);
   box-shadow: 0px 0px 25px rgba(77, 166, 255, 0.6);
   background: rgba(255, 255, 255, 0.15);
 }
-
 /* Profile Image */
 .team-member img {
   width: 130px;
@@ -380,39 +415,33 @@ body {
   border: 3px solid #4da6ff;
   transition: all 0.3s ease-in-out;
 }
-
 /* Image Glow Effect */
 .team-member:hover img {
   transform: rotate(5deg) scale(1.1);
   border-color: #ffdb4d;
   box-shadow: 0 0 20px rgba(255, 219, 77, 0.5);
 }
-
 /* Text Info */
 .team-info {
   text-align: left;
   flex: 1;
 }
-
 .team-info h4 {
   font-size: 1.9rem;
   margin-bottom: 8px;
   font-weight: bold;
   transition: color 0.4s ease-in-out;
 }
-
 /* Name Glow Effect */
 .team-member:hover .team-info h4 {
   color: #ffdb4d;
   text-shadow: 0 0 10px rgba(255, 219, 77, 0.5);
 }
-
 /* Additional Text */
 .team-info p {
   font-size: 1.2rem;
   margin: 6px 0;
 }
-
 /* LinkedIn Link */
 .team-info a {
   display: inline-block;
@@ -423,12 +452,10 @@ body {
   font-size: 1.2rem;
   transition: all 0.3s ease-in-out;
 }
-
 .team-info a:hover {
   color: #ffdb4d;
   transform: translateX(5px);
 }
-
 /* Volunteers Section */
 .volunteers {
   text-align: center;
@@ -436,7 +463,6 @@ body {
   background-color: #0a0f28;
   color: white;
 }
-
 /* Volunteers Heading */
 .volunteers h2 {
   font-size: 3rem;
@@ -446,11 +472,9 @@ body {
   color: #ffdb4d;
   transition: color 0.4s ease-in-out;
 }
-
 .volunteers h2:hover {
   color: #4da6ff;
 }
-
 /* Subheading */
 .volunteers p {
   font-size: 1.5rem;
@@ -458,7 +482,6 @@ body {
   animation: fadeInDown 1.2s ease-in-out;
   color: #4da6ff;
 }
-
 /* Slider Wrapper */
 .slider-container {
   overflow: hidden;
@@ -467,170 +490,74 @@ body {
   display: flex;
   justify-content: center;
 }
-
-/* Slider Track - No animation */
+/* Slider Track */
 .slider {
   display: flex;
   gap: 30px;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
+  width: 400%;
+  animation: slide 20s linear infinite;
 }
-
-/* Volunteer Cards - Logo Only Initially */
+/* Volunteer Cards */
 .volunteer-card {
-  flex: 0 0 200px;
-  height: 200px;
+  flex: 0 0 calc(25% - 30px);
   background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  margin: 15px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Card Logo Styling */
-.volunteer-card::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.9;
-  transition: all 0.5s ease-in-out;
-  z-index: 2;
-}
-
-/* GitHub logo */
-.volunteer-card:nth-child(3)::before {
-  background-image: url('https://static.vecteezy.com/system/resources/previews/046/437/248/non_2x/github-logo-transparent-background-free-png.png');
-}
-
-/* Kaggle logo */
-.volunteer-card:nth-child(2)::before {
-  background-image: url('https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/189_Kaggle_logo_logos-512.png');
-}
-
-/* Lead organizer logo */
-.volunteer-card:nth-child(1)::before {
-  background-image: url('https://www.freeiconspng.com/thumbs/scroll-icon/scroll-icon-5.png');
-}
-
-/* Design & promotion logo */
-.volunteer-card:nth-child(4)::before {
-  background-image: url('https://www.freeiconspng.com/thumbs/scroll-icon/scroll-icon-5.png');
-}
-
-/* Hide card content initially */
-.volunteer-card img,
-.volunteer-card h4,
-.volunteer-card p,
-.volunteer-card a {
-  opacity: 0;
-  position: absolute;
+  padding: 25px;
+  text-align: center;
   transition: all 0.5s ease-in-out;
 }
-
-/* Card Hover/Active State */
-.volunteer-card:hover,
-.volunteer-card:active {
-  flex: 0 0 300px;
-  height: 400px;
-  background: rgba(255, 255, 255, 0.15);
+/* Hover Effect - Subtle Blue Glow */
+.volunteer-card:hover {
+  transform: translateY(-10px) scale(1.03);
   box-shadow: 0px 0px 25px rgba(77, 166, 255, 0.6);
-  transform: translateY(-10px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
 }
-
-/* Move logo to top on hover */
-.volunteer-card:hover::before,
-.volunteer-card:active::before {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  opacity: 0.7;
-}
-
-/* Show content on hover */
-.volunteer-card:hover img,
-.volunteer-card:hover h4,
-.volunteer-card:hover p,
-.volunteer-card:hover a,
-.volunteer-card:active img,
-.volunteer-card:active h4,
-.volunteer-card:active p,
-.volunteer-card:active a {
-  opacity: 1;
-  position: relative;
-  animation: fadeInUp 0.5s ease-in-out forwards;
-}
-
-/* Staggered animation for content */
-.volunteer-card:hover img,
-.volunteer-card:active img {
+/* Image Styling - 50% of Card Width */
+.volunteer-card img {
   width: 50%;
   height: auto;
   border-radius: 50%;
   border: 4px solid #4da6ff;
   margin-bottom: 15px;
   object-fit: cover;
-  animation-delay: 0s;
+  transition: all 0.3s ease-in-out;
 }
-
-.volunteer-card:hover h4,
-.volunteer-card:active h4 {
+/* Image Hover - Glow Effect */
+.volunteer-card:hover img {
+  transform: scale(1.1) rotate(5deg);
+  border-color: #ffdb4d;
+  box-shadow: 0 0 20px rgba(255, 219, 77, 0.5);
+}
+/* Name */
+.volunteer-card h4 {
   font-size: 1.8rem;
-  margin: 10px 0 5px;
+  margin-bottom: 5px;
   font-weight: bold;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+.volunteer-card:hover h4 {
   color: #ffdb4d;
-  animation-delay: 0.1s;
 }
-
-.volunteer-card:hover p,
-.volunteer-card:active p {
-  font-size: 1.2rem;
-  margin: 5px 0;
-  animation-delay: 0.2s;
-}
-
-.volunteer-card:hover a,
-.volunteer-card:active a {
+/* LinkedIn Link */
+.volunteer-card a {
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 10px;
   color: #ffdb4d;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.3rem;
-  animation-delay: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
-
-.volunteer-card:hover a:hover {
+.volunteer-card a:hover {
   color: #4da6ff;
   transform: translateY(-3px);
 }
-
 /* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -641,7 +568,6 @@ body {
     transform: translateY(0);
   }
 }
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -652,7 +578,6 @@ body {
     transform: translateY(0);
   }
 }
-
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -663,7 +588,6 @@ body {
     transform: translateX(0);
   }
 }
-
 @keyframes fadeInLeft {
   from {
     opacity: 0;
@@ -674,19 +598,11 @@ body {
     transform: translateX(0);
   }
 }
-
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-
 @keyframes colorChange {
   0% {
     background: linear-gradient(90deg, #4da6ff, #ff4dff, #ffdb4d);
@@ -699,43 +615,39 @@ body {
     -webkit-text-fill-color: transparent;
   }
 }
-
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .workshop-content h1 {
     font-size: 40px;
   }
-
   .workshop-content h2,
   .animated-text {
     font-size: 30px;
   }
-
   .team-member {
     width: 100%;
   }
 }
-
 @media screen and (max-width: 992px) {
   .navbar {
     padding: 0 20px;
   }
-
   .workshop {
     flex-direction: column;
     text-align: center;
   }
-
   .workshop-content,
   .workshop-image {
     max-width: 100%;
   }
-
   .day li {
     font-size: 1rem;
   }
 }
-
 @media screen and (max-width: 768px) {
   .nav-links {
     display: none;
@@ -747,101 +659,55 @@ body {
     background-color: #080c2e;
     padding: 20px 0;
   }
-
   .nav-links.active {
     display: flex;
   }
-
   .hamburger {
     display: block;
   }
-
   .workshop-content h1 {
     font-size: 32px;
   }
-
   .workshop-content h2,
   .animated-text {
     font-size: 24px;
   }
-
   .team-member {
     flex-direction: column;
     text-align: center;
   }
-
   .team-member img {
     margin-right: 0;
     margin-bottom: 20px;
   }
-
-  /* Mobile card adjustments */
   .volunteer-card {
-    flex: 0 0 150px;
-    height: 150px;
-  }
-
-  .volunteer-card:hover,
-  .volunteer-card:active {
-    flex: 0 0 280px;
-    height: 380px;
+    flex: 0 0 calc(50% - 30px);
   }
 }
-
 @media screen and (max-width: 576px) {
   .workshop-content h1 {
     font-size: 28px;
   }
-
   .workshop-content h2,
   .animated-text {
     font-size: 20px;
   }
-
   .get-started-btn {
     font-size: 16px;
     padding: 10px 20px;
   }
-
   .schedule h2,
   .team h2,
   .volunteers h2 {
     font-size: 2.5rem;
   }
-
   .day h3 {
     font-size: 1.5rem;
   }
-
-  /* Mobile card adjustments */
   .volunteer-card {
-    flex: 0 0 130px;
-    height: 130px;
-    margin: 10px;
-  }
-
-  .volunteer-card:hover,
-  .volunteer-card:active {
-    flex: 0 0 260px;
-    height: 360px;
-  }
-
-  .volunteer-card:hover h4,
-  .volunteer-card:active h4 {
-    font-size: 1.5rem;
-  }
-
-  .volunteer-card:hover p,
-  .volunteer-card:active p {
-    font-size: 1rem;
-  }
-
-  .volunteer-card:hover a,
-  .volunteer-card:active a {
-    font-size: 1.1rem;
+    flex: 0 0 calc(100% - 30px);
   }
 }
-
 /* FAQ Section with Enhanced Styling */
 .faq {
   text-align: center;
@@ -850,7 +716,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
 .faq h2 {
   margin-bottom: 40px; /* Adjust spacing */
   font-size: 40px; /* Adjust text size if needed */
@@ -860,7 +725,6 @@ body {
   text-shadow: 0 0 3px #00aaff, 0 0 6px rgba(0, 170, 255, 0.6);
   animation: subtleGlow 1.5s infinite alternate;
 }
-
 /* Subtle Glowing Animation */
 @keyframes subtleGlow {
   0% {
@@ -870,8 +734,6 @@ body {
     text-shadow: 0 0 4px #00aaff, 0 0 8px rgba(0, 170, 255, 0.8);
   }
 }
-
-
 /* Background Gradient Effect */
 .faq::before {
   content: '';
@@ -884,7 +746,6 @@ body {
   animation: pulseGradient 8s ease-in-out infinite;
   pointer-events: none;
 }
-
 .faq-container {
   max-width: 900px;
   margin: auto;
@@ -893,7 +754,6 @@ body {
   z-index: 1;
   animation: fadeIn 1.2s ease-in-out;
 }
-
 /* Enhanced FAQ Item */
 .faq-item {
   margin-bottom: 25px; /* Increased spacing */
@@ -904,13 +764,11 @@ body {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
-
 .faq-item:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
-
 /* Improved Question Button */
 .faq-question {
   width: 100%;
@@ -929,7 +787,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
 /* Hover Effect */
 .faq-question::before {
   content: '';
@@ -941,15 +798,12 @@ body {
   background: rgba(255, 255, 255, 0.05);
   transition: transform 0.5s ease;
 }
-
 .faq-question:hover::before {
   transform: translateX(100%);
 }
-
 .faq-question:hover {
   color: #00aaff;
 }
-
 /* Enhanced Answer Section */
 .faq-answer {
   display: none;
@@ -963,7 +817,6 @@ body {
   border-radius: 0 0 10px 10px;
   animation: slideDown 0.3s ease-out;
 }
-
 /* Plus Icon with Enhanced Animation */
 .plus {
   font-size: 26px;
@@ -978,21 +831,17 @@ body {
   border-radius: 50%;
   background: rgba(0, 170, 255, 0.15);
 }
-
 /* Active States */
 .active .faq-answer {
   display: block;
 }
-
 .active .plus {
   transform: rotate(45deg);
   background: rgba(0, 170, 255, 0.3);
 }
-
 .active .faq-question {
   color: #00aaff;
 }
-
 /* Animations */
 @keyframes slideDown {
   from {
@@ -1004,31 +853,26 @@ body {
     transform: translateY(0);
   }
 }
-
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .faq {
     padding: 80px 5%;
   }
-
   .faq-question {
     font-size: 18px;
     padding: 20px;
   }
-
   .faq-answer {
     font-size: 16px;
     padding: 15px;
     margin: 10px;
   }
-
   .plus {
     font-size: 22px;
     width: 28px;
     height: 28px;
   }
 }
-
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .faq-question,
