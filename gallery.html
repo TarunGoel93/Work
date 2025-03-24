@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="l.css">
+</head>
+<body>
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Gallery</title>
+      <link rel="stylesheet" href="l.css">
+  </head>
+  <body>
+  
+      <section class="full-gallery">
+          <h2>Event Gallery</h2>
+          <div class="gallery-grid">
+              <img src="e11.jpg" alt="Event 1" onclick="openLightbox(this)">
+              <img src="e12.jpg" alt="Event 2" onclick="openLightbox(this)">
+              <img src="e13.jpg" alt="Event 3" onclick="openLightbox(this)">
+              <img src="e14.jpg" alt="Event 4" onclick="openLightbox(this)">
+              <img src="e15.jpg" alt="Event 5" onclick="openLightbox(this)">
+              <img src="e16.jpg" alt="Event 6" onclick="openLightbox(this)">
+              <img src="e17.jpg" alt="Event 7" onclick="openLightbox(this)">
+              <img src="e18.jpg" alt="Event 8" onclick="openLightbox(this)">
+              <img src="e19.jpg" alt="Event 9" onclick="openLightbox(this)">
+          </div>
+          <a href="index.html" class="back-btn">Back to Home</a>
+  
+          <!-- Lightbox for Fullscreen View -->
+          <div id="lightbox" class="lightbox">
+              <span class="close" onclick="closeLightbox()">&times;</span>
+              <img class="lightbox-img" id="lightbox-img">
+          </div>
+  
+      </section>
+  
+      <script src="l.js">
+
+      </script>
+  </body>
+  </html>
+  
+
+</body>
+</html>
