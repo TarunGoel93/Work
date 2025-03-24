@@ -736,34 +736,27 @@ body {
   }
 
   /* Mobile Volunteer Card Carousel */
-  .slider {
-    width: 100%;
-    flex-wrap: nowrap;
-    animation: none; /* Remove default animation */
+  @media screen and (max-width: 768px) {
+    .slider {
+      display: flex;
+      flex-direction: column; /* Stack the cards */
+      align-items: center; /* Center align */
+      width: 100%;
+      animation: none; /* Remove animation */
+    }
+  
+    .volunteer-card {
+      flex: 0 0 auto; /* Auto height for each card */
+      opacity: 1 !important; /* Ensure visibility */
+      position: relative !important;
+      max-width: 90%; /* Adjust width for mobile */
+      margin: 10px auto; /* Add spacing */
+    }
   }
+  
+  
 
-  .volunteer-card {
-    flex: 0 0 100%;
-    display: block; /* Show all cards by default */
-    margin: 0 auto;
-    max-width: 300px; /* Limit width on mobile */
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    transition: opacity 0.2s ease-in-out;
-  }
 
-  .volunteer-card:first-child {
-    opacity: 1; /* Make first card visible by default */
-    position: relative;
-  }
-
-  .volunteer-card.active {
-    opacity: 1;
-    position: relative;
-    
-  }
 
   /* Schedule section adjustments */
   .schedule {
