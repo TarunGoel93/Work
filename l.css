@@ -10,6 +10,7 @@
 body {
   background-color: #0a0f28;
   color: white;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Sticky Navbar */
@@ -160,8 +161,13 @@ body {
 
 /* Animation for "Think_, code_" */
 @keyframes textFade {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .think-code-animation span {
@@ -249,7 +255,7 @@ body {
 }
 
 .schedule h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -293,11 +299,21 @@ body {
 }
 
 /* Staggered Animation Delay */
-.day li:nth-child(1) { animation-delay: 0.2s; }
-.day li:nth-child(2) { animation-delay: 0.3s; }
-.day li:nth-child(3) { animation-delay: 0.4s; }
-.day li:nth-child(4) { animation-delay: 0.5s; }
-.day li:nth-child(5) { animation-delay: 0.6s; }
+.day li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.day li:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.day li:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.day li:nth-child(4) {
+  animation-delay: 0.5s;
+}
+.day li:nth-child(5) {
+  animation-delay: 0.6s;
+}
 
 /* Hover Effect */
 .day li:hover {
@@ -473,7 +489,7 @@ body {
   display: flex;
   gap: 30px;
   width: 400%;
-  animation: slide 20s linear infinite;
+  animation: slide 0s linear infinite;
 }
 
 /* Volunteer Cards */
@@ -542,8 +558,12 @@ body {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInDown {
@@ -591,9 +611,15 @@ body {
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes colorChange {
@@ -610,8 +636,12 @@ body {
 }
 
 @keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Responsive Design */
@@ -619,12 +649,12 @@ body {
   .workshop-content h1 {
     font-size: 40px;
   }
-  
+
   .workshop-content h2,
   .animated-text {
     font-size: 30px;
   }
-  
+
   .team-member {
     width: 100%;
   }
@@ -634,19 +664,28 @@ body {
   .navbar {
     padding: 0 20px;
   }
-  
+
   .workshop {
     flex-direction: column;
     text-align: center;
+    padding: 120px 5% 60px; /* Adjusted padding for better spacing */
   }
-  
+
   .workshop-content,
   .workshop-image {
     max-width: 100%;
   }
-  
+
+  .workshop-content {
+    margin-bottom: 30px; /* Add space between content and image */
+  }
+
   .day li {
     font-size: 1rem;
+  }
+
+  .team-container {
+    gap: 30px; /* Reduced gap for better spacing */
   }
 }
 
@@ -660,69 +699,242 @@ body {
     width: 100%;
     background-color: #080c2e;
     padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
   }
-  
+
   .nav-links.active {
     display: flex;
   }
-  
+
   .hamburger {
     display: block;
   }
-  
+
   .workshop-content h1 {
     font-size: 32px;
   }
-  
+
   .workshop-content h2,
   .animated-text {
     font-size: 24px;
   }
-  
+
   .team-member {
     flex-direction: column;
     text-align: center;
+    padding: 20px; /* Reduced padding */
   }
-  
+
   .team-member img {
     margin-right: 0;
     margin-bottom: 20px;
   }
-  
+
+  .team-info {
+    text-align: center;
+  }
+
+  /* Mobile Volunteer Card Carousel */
+  .slider {
+    width: 100%;
+    flex-wrap: nowrap;
+    animation: none; /* Remove default animation */
+  }
+
   .volunteer-card {
-    flex: 0 0 calc(50% - 30px);
+    flex: 0 0 100%;
+    display: block; /* Show all cards by default */
+    margin: 0 auto;
+    max-width: 300px; /* Limit width on mobile */
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .volunteer-card:first-child {
+    opacity: 1; /* Make first card visible by default */
+    position: relative;
+  }
+
+  .volunteer-card.active {
+    opacity: 1;
+    position: relative;
+    
+  }
+
+  /* Schedule section adjustments */
+  .schedule {
+    padding: 60px 5%;
+  }
+
+  .day h3 {
+    font-size: 1.5rem;
+  }
+
+  .day li {
+    padding: 12px;
   }
 }
 
 @media screen and (max-width: 576px) {
+  .navbar {
+    height: 70px; /* Slightly smaller navbar */
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .workshop {
+    padding: 100px 4% 50px; /* Adjusted padding */
+  }
+
   .workshop-content h1 {
     font-size: 28px;
   }
-  
+
   .workshop-content h2,
   .animated-text {
     font-size: 20px;
   }
-  
+
+  .workshop-content p {
+    font-size: 16px;
+  }
+
   .get-started-btn {
     font-size: 16px;
     padding: 10px 20px;
+    margin-top: 20px;
   }
-  
+
   .schedule h2,
   .team h2,
   .volunteers h2 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Smaller heading */
   }
-  
+
+  .team h3 {
+    font-size: 1.8rem;
+  }
+
+  .team p,
+  .volunteers p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
   .day h3 {
+    font-size: 1.3rem;
+  }
+
+  .team-member {
+    padding: 15px;
+  }
+
+  .team-info h4 {
     font-size: 1.5rem;
   }
-  
-  .volunteer-card {
-    flex: 0 0 calc(100% - 30px);
+
+  .team-info p {
+    font-size: 1rem;
+  }
+
+  .volunteer-card h4 {
+    font-size: 1.5rem;
+  }
+
+  .volunteer-card a {
+    font-size: 1.1rem;
   }
 }
+
+/* GALLERY SECTION */
+.gallery {
+  text-align: center;
+  padding: 80px 8%;
+  background-color: #0a0f28;
+  color: white;
+}
+
+/* Gallery Heading */
+.gallery h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #ffdb4d;
+  transition: color 0.4s ease-in-out;
+}
+
+.gallery h2:hover {
+  color: #4da6ff;
+}
+
+/* Gallery Container */
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Each Gallery Item */
+.gallery-item {
+  flex: 0 0 calc(33.333% - 30px);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s ease-in-out;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* See More Button */
+.see-more-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #0056b3;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.see-more-btn:hover {
+  background-color: #003d80;
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .gallery-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .gallery-item {
+    flex: 0 0 100%;
+  }
+}
+
 
 /* FAQ Section with Enhanced Styling */
 .faq {
@@ -753,10 +965,9 @@ body {
   }
 }
 
-
 /* Background Gradient Effect */
 .faq::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -814,7 +1025,7 @@ body {
 
 /* Hover Effect */
 .faq-question::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -887,10 +1098,14 @@ body {
   }
 }
 
-/* Responsive Design */
+/* Responsive Design for FAQ */
 @media screen and (max-width: 768px) {
   .faq {
     padding: 80px 5%;
+  }
+
+  .faq h2 {
+    font-size: 2rem;
   }
 
   .faq-question {
@@ -911,6 +1126,28 @@ body {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .faq {
+    padding: 60px 4%;
+  }
+
+  .faq h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+    padding: 12px;
+    margin: 8px;
+  }
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .faq-question,
@@ -922,3 +1159,135 @@ body {
   }
 }
 
+/* Animation for mobile volunteer carousel */
+@keyframes pulseGradient {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  /* Reset for desktop view */
+  .volunteer-card {
+    position: relative;
+    opacity: 1;
+    flex: 0 0 calc(25% - 30px);
+  }
+}
+@media screen and (min-width: 769px) {
+  .volunteer-card {
+    opacity: 1 !important; /* Ensure all cards are visible */
+    position: relative !important;
+  }
+}
+
+/* Full Gallery Section */
+.full-gallery {
+  text-align: center;
+  padding: 80px 8%;
+  background-color: #0a0f28;
+  color: white;
+}
+
+/* Gallery Heading */
+.full-gallery h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #ffdb4d;
+}
+
+/* Gallery Grid Layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Gallery Images */
+.gallery-grid img {
+  width: 100%;
+  max-width: 350px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #0056b3;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-btn:hover {
+  background-color: #003d80;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Only 1 column for mobile */
+  }
+
+  .gallery-grid img {
+    width: 100%; /* Full width */
+    max-width: none; /* Remove width restriction */
+    height: auto; /* Keep aspect ratio */
+  }
+}
+
+
+
+/* Lightbox Styling */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: red;
+}
