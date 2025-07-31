@@ -1,9 +1,9 @@
 # GitHub & Kaggle Workshop Website
-
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/TarunGoel93/Work)
 
 This repository contains the source code for the official website of the "GitHub & Kaggle Workshop," a two-day hands-on training session designed for students at K.R. Mangalam University. The website is a single-page application that provides comprehensive details about the event, including the schedule, organizers, and a registration link.
 
-A live version of the website can be viewed here: **[https://tarungoel93.github.io/work/](https://tarungoel93.github.io/Work/)**    
+A live version of the website can be viewed here: **[https://tarungoel93.github.io/work/](https://tarungoel93.github.io/Work/)**
 
 ## ✨ Features
 
